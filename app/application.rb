@@ -22,7 +22,9 @@ class Application
           resp.write "#{item}\n"
         end
       end
-
+    elsif req.path.match(/add/)
+      search_term = req.params["q"]
+      resp.write handle_search(search_term)
 
 
     else
